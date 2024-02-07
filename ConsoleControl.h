@@ -50,7 +50,7 @@ public:
 
 	static int ReadNextKey();
 	static int WaithForReadNextKey();
-	static char WaithForReadNextChar();
+	static char WaitForReadNextChar();
 
 	static void LockMutex();
 	static void UnlockMutex();

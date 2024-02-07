@@ -71,7 +71,7 @@ int ConsoleControl::WaithForReadNextKey()
 	return KB_code;
 }
 
-char ConsoleControl::WaithForReadNextChar()
+char ConsoleControl::WaitForReadNextChar()
 {
 	char c = 0;
 

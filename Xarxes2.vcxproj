@@ -200,7 +200,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Chat.cpp" />
+    <ClCompile Include="ConsoleControl.cpp" />
     <ClCompile Include="Xarxes2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Chat.h" />
+    <ClInclude Include="ConsoleControl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
