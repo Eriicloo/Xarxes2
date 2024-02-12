@@ -3,7 +3,8 @@
 #include <iostream>
 #include <conio.h>
 #include <SFML/Network.hpp>
-#include "ConsoleControl.h"
+
+#include "Chat.h"
 
 void RunClient();
 void RunServer();
@@ -51,86 +52,17 @@ void RunClient()
 {
 	std::cout << "Client";
 
-	
+	std::cout << std::endl << "Set server IP --> ";
 
-	/*sf::TcpSocket socket;
-	sf::Socket::Status status = socket.connect("10.40.3.123", port);
+	std::string ip;
+	std::getline(std::cin, ip);
 
-	if(status != sf::Socket::Done) 
-	{
-		std::cout << std::endl << "Error on connect to the server";
-		return;
-	}
-
-	while (true)
-	{
-		std::cout << std::endl << "Next Message: ";
-		std::string message;
-		std::getline(std::cin, message);
-
-		char data[100];
-
-		int stringSize = message.length();
-		for(int i = 0; i < stringSize; i++) 
-		{
-			char c = message[i];
-			data[i] = c;
-		}
-
-
-		if(socket.send(data, 100) != sf::Socket::Done) 
-		{
-			std::cout << std::endl << "Error sending message";
-		}
-	}*/
+	Chat* chat = Chat::Client(port, ip);
 }
 
 void RunServer()
 {
 	std::cout << "Server";
 
-	/*sf::TcpListener listener;
-
-	if(listener.listen(port) != sf::Socket::Done)
-	{
-		std::cout << std::endl << "Error on Start Listener";
-		return;
-	}
-
-	sf::IpAddress ipAddress = sf::IpAddress::getLocalAddress();
-	std::cout << std::endl << "Listening on IP: " + ipAddress.toString();
-
-	sf::TcpSocket client;
-
-	if(listener.accept(client) != sf::Socket::Done)
-	{
-		std::cout << std::endl << "Error on accept Client";
-		return;
-	}
-
-	std::cout << std::endl << "Client Connected: " << client.getRemoteAddress().toString();
-
-	while (true) 
-	{
-		char data[100];
-		std::size_t received;
-
-		std::string message;
-
-		if (client.receive(data, 100, received) != sf::Socket::Done) 
-		{
-			std::cout << std::endl << "Error on receive message";
-		}
-		else
-		{
-			for (size_t i = 0; i < received; i++)
-			{
-				char c = data[i];
-				message += c;
-			}
-			std::cout << std::endl << message;
-
-		}
-	}*/
-
+	Chat* chat = Chat::Server(port);
 }
