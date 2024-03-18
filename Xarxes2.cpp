@@ -138,13 +138,35 @@ void RunWindows()
 {
 	Window window;
 
-	Button* button = new Button(50, 20, "Piezas/QG.png");
-	button->onClick = []() 
+	Image* grid = new Image(0, 0, "Resources/Grid.png");
+
+
+	std::vector<Button*> _pieces;
+	Button* TGButton = new Button(0, 0, "Resources/TG.png");
+	Button* HGButton = new Button(0, 0, "Resources/HG.png");
+	Button* BGButton = new Button(0, 0, "Resources/BG.png");
+	Button* QGButton = new Button(0, 0, "Resources/QG.png");
+	Button* KGButton = new Button(0, 0, "Resources/KG.png");
+	Button* BGButton2 = new Button(0, 0, "Resources/BG.png");
+	Button* HGButton2 = new Button(0, 0, "Resources/HG.png");
+	Button* TGButton2 = new Button(0, 0, "Resources/TG.png");
+
+	Button* TWButton = new Button(512, 0, "Resources/TW.png");
+	Button* HWButton = new Button(512, 0, "Resources/HW.png");
+	Button* BWButton = new Button(512, 0, "Resources/BW.png");
+	Button* QWButton = new Button(512, 0, "Resources/QW.png");
+	Button* KWButton = new Button(512, 0, "Resources/KW.png");
+	Button* BWButton2 = new Button(512, 0, "Resources/BW.png");
+	Button* HWButton2 = new Button(512, 0, "Resources/HW.png");
+	Button* TWButton2 = new Button(512, 0, "Resources/TW.png");
+	
+	QGButton->onClick = []() 
 		{
 			std::cout << std::endl << "Long Live the Queen";
 		};
 
-	window.AddButton(button);
+	window.AddImage(grid);
+	window.AddButton(QGButton);
 	window.RunWindowsLoop();
 
 	/*sf::RenderWindow windows;

@@ -200,6 +200,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Handler.cpp" />
+    <ClCompile Include="WindowsHelpers\Image.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="WindowsHelpers\Button.cpp" />
     <ClCompile Include="Chat.cpp" />
     <ClCompile Include="ConsoleControl.cpp" />
@@ -212,6 +215,9 @@
     <ClCompile Include="Xarxes2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Handler.h" />
+    <ClInclude Include="WindowsHelpers\Image.h" />
+    <ClInclude Include="WindowManager.h" />
     <ClInclude Include="WindowsHelpers\Button.h" />
     <ClInclude Include="Chat.h" />
     <ClInclude Include="ConsoleControl.h" />

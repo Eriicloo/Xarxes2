@@ -21,6 +21,22 @@ void Window::AddButton(Button* button)
 	_mutex.unlock();
 }
 
+void Window::AddImage(Image* image)
+{
+	_mutex.lock();
+	_images.push_back(image);
+	_objectsToDraw.push_back(image);
+	_mutex.unlock();
+
+}
+
+void Window::AddTask(MainThreadTask task)
+{
+	_tasksMutex.lock();
+	_tasks.push_back(task);
+	_tasksMutex.unlock();
+}
+
 void Window::RunWindowsLoop()
 {
 	//Hauria de ser thread safe i no ho es ara mateix!!!!!
@@ -90,7 +106,7 @@ void Window::RunWindowsLoop()
 				}
 				case sf::Event::MouseWheelScrolled: //Moved esta deprecated, no usar
 				{
-					//Todo pero el profe es un putero i no lo hace
+					//Todo pero el profe no lo hace
 					break;
 				}
 			default:
